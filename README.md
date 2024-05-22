@@ -13,7 +13,7 @@ sudo dnf install firewalld
 sudo dnf group install "Container Management"
 ```
 
-### You can skip this part if you don't know what you're doing
+### You can skip the next 2 code snippets if you don't know what you're doing
 
 
 
