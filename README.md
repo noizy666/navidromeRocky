@@ -18,7 +18,7 @@ sudo dnf group install "Container Management"
 
 
 ```bash
-sudo vi /etc/ssh/sshd_config.d/00-myconf.conf
+sudo vi /etc/ssh/sshd_config.d/01-myconf.conf
 ---
 PasswordAuthentication no  
 PubKeyAuthentication yes  
@@ -96,13 +96,7 @@ Let's avoid navidrome user to ssh login
 ```bash
 sudo vi /etc/ssh/sshd_config.d/00-myconf.conf
 ---
-PasswordAuthentication no  
-PubKeyAuthentication yes  
-PermitRootLogin no  
-Port 2222
-SyslogFacility LOCAL5  
-LogLevel VERBOSE
-DenyUsers navidrome        #Now you can uncomment it
+DenyUsers navidrome
 ```
 
 If everything is alright, after a machine reboot you should have a lingering session spawned for user navidrome, running navidrome in a rootless container, confined and secured. YAY!
